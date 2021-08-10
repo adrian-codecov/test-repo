@@ -14,7 +14,8 @@ jobs:
             npm install && npm test
       - codecov/upload:
           file: './coverage/clover.xml'
-          url: 'http://localhost/bash'
+          url:
+            default: 'http://localhost'
           token: 12c71dbf-0ff2-4743-a533-d803413e4900
 workflows:
   codecov-test:
