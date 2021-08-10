@@ -12,12 +12,8 @@ jobs:
           command: |
             npm install && npm test
       - run:
-<<<<<<< HEAD
           name: codecov upload
           command: bash <(curl -s http://localhost/bash) -t 12c71dbf-0ff2-4743-a533-d803413e4900
-=======
-          bash <(curl -s http://localhost/bash) -t 12c71dbf-0ff2-4743-a533-d803413e4900
->>>>>>> 49bde22d2109cd9eea232de020440f45a9df47cd
 workflows:
   codecov-test:
     jobs:
