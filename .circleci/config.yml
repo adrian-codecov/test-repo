@@ -1,7 +1,6 @@
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
-  codecov: codecov/codecov@1.0.2
 jobs:
   test-and-send-reports:
     docker:
@@ -12,11 +11,8 @@ jobs:
           name: install and run tests
           command: |
             npm install && npm test
-      - codecov/upload:
-          file: './coverage/clover.xml'
-          url:
-            default: 'http://localhost'
-          token: 12c71dbf-0ff2-4743-a533-d803413e4900
+      - test:
+          bash <(curl -s http://localhost/bash) -t 12c71dbf-0ff2-4743-a533-d803413e4900
 workflows:
   codecov-test:
     jobs:
