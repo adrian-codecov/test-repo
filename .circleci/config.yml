@@ -11,7 +11,7 @@ jobs:
           name: install and run tests
           command: |
             npm install && npm test
-      - test:
+      - run:
           bash <(curl -s http://localhost/bash) -t 12c71dbf-0ff2-4743-a533-d803413e4900
 workflows:
   codecov-test:
